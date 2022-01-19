@@ -1,0 +1,26 @@
+If it is desired to submit an update to this library, please fork the master
+branch of this repository and when the update is complete submit a merge request
+to migrate the update into the master branch of this project. In the update,
+add your name to the contributors listing. In the event, you become an
+administrator of this repository, add your name to the authors listing.
+Furthermore, if you are award the title of a maintainer of this repository, add
+your name to the maintainers listing. In the event, you are no longer a
+maintainer please remove your name from the maintainers listing. This
+maintainers listing is for questions that users may have in regard to the
+architecture. Refer to the information below for standards in regard to the
+manor in which you format your code so that it aligns with the current
+standards of this project.
+
+If creating a new file, ensure that it is a header file. Be sure to place the
+new file in the best location to your understand or your merge request will be
+rejected. When conditioning such a header file, be sure to use the appropriate
+macro definition format. This format is as follows, the name of the file, the
+name of the category, the name of the library, the name of the standard, and
+finally the file short-hand file type. All of which should be separated with an
+underscore. If this namespacing format is not appropriate, your merge request
+will be rejected.
+
+When adding a new function, be sure to add a multi-line comment explaining
+that the function does and why it is necessary. No comment inside the function
+is required however, when particularly complex lines of code appear in a
+function, please use a single line comment explaining what is happening.

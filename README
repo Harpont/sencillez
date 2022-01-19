@@ -1,0 +1,34 @@
+Standard GNU99C Simplicity (Convention Library)
+
+The purpose of this library is to simplify programming with the C programming
+language. This is possible by abstracting community established best practices
+surrounding calls to functions in the C standard libraries. The abstractions in
+this library wrap and overload a series of functions by default, making these calls more consistent and safe. Implementing programs in this way allows
+developers to focus more on conceptual aspects of the program as opposed to
+conventional ones.
+
+This concept appears and is applied to a segment of code purely during the pre-
+processing stage of GNU GCC compilation. A combination of both inline and macro
+functions, inject the necessary syntax around a C standard library function
+call to handle pre and post call operations. This reduces the amount of written
+code necessary to make calls to these libraries and also ensures that the
+conventions around these calls are implemented properly, as defined by the C
+community.
+
+The goal of this library is to safe guard against common bugs due to
+overlooking some aspect of a C convention surrounding a call to a function in a
+C standard library or a misunderstanding of a C convention surrounding a call
+to a function in a C standard library and/or why it is necessary. By overloading
+such functions, it allows developers to program in C, maintaining the ability to
+write code like more simplistic languages, while optionally reserving the
+ability to write unconventional code surrounding a call to a function in a C
+standard library. It is not a goal of this library to super-set the C
+programming language. There are no additional functionalities added to this
+library other than that of the code, that is convention, of the surrounding
+segments of a call to a function in a C standard library.
+
+For detailed information about the licenses of this library and/or the internals
+of this library, please refer to the documentation directory located in this
+projects directory structure or the license file located in the root directory
+of this project. In these locations you will find all of the necessary details
+to better understand the usages and/or aspects of this library.

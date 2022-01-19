@@ -1,0 +1,17 @@
+0.1.1:
+  - Initial internal definitions for existing functions.
+    These initial internal definitions consist of function attributes for
+    compiler specificity, compiler flag conditions for control, error messages,
+    and additional standard integer definitions for internal use.
+
+  - Basic stdout logging system.
+    This system has been implemented for mimicking the C standard library error
+    logging system.
+
+  - Generic free function.
+    This function, when called, injects the appropriate code for freeing any
+    pointer type from the heap.
+
+  - Generic malloc function.
+    This function, when called, injects the appropriate code for allocating any
+    pointer type to the heap.

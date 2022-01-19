@@ -1,0 +1,9 @@
+Messages are standardized messages that mimic the standard error messages in the
+C standard libraries are defined for writing messages to the stdout for graceful
+error occurrences specific to this library.
+
+The following lists the the messages and their descriptions found in `msg.h`:
+  INVALID_PTR - A message to stderr of an invalid pointer.
+  INVALID_STR - A message to stderr of an invalid string.
+  NOT_CPY - A message to stderr of an invalid copy.
+  OUT_OF_MEM - A message to stderr of insufficent memory.

@@ -1,0 +1,9 @@
+Attributes for the sake of this library, are namespaces that shorten the
+declaration of a predefined attribute. These attributes specify detailed
+information to the compiler about the state of a particular function or
+variable. These attributes are internal to this library and are not intended
+for use outside of the context of this library.
+
+The following lists the the attributes and their descriptions found in `attr.h`:
+  always_inline - shortens the attribute `__attribute__ ((always_inline))`.
+  unused - shortens the attribute `__attribute__ ((unused))`.

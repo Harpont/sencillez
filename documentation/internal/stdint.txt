@@ -1,0 +1,3 @@
+Defines a series of basic or normal integer segment namespaces for internal
+usage when it is necessary to use a base type. The implementation of these
+normal integer types mimics that of the definitions in the standard C libraries.

@@ -1,0 +1,21 @@
+Compiler flags defined by the compiler and/or the user, determine the ways in
+which this library is implemented and its magnitude. There are several ways in which this library can be disabled. One of which is to disable an entire file by
+specifying the macro flag -DUNCONVENTIONAL to the compiler. When this flag is
+provided this disables the standard C conventions when calling a function from
+the standard C libraries for the entirety of a file provided to the compiler.
+
+Another way a code segment can be deemed unconventional is to specify the
+function attribute `__attribute__ ((unconventional))` on a particular function.
+This allows the compiler to compile all functions in a file without the
+unconventional attribute conventionally while still compiling functions with the
+unconventional attribute unconventionally.
+
+The final way in which a code segment can be compiled unconventionally, is to
+wrap the unconventional lines inside a function in the unconventional macro
+declaration. However, while each of these methods are effective for disabling
+standard C conventions, if debugging is enabled on the compiler, strict
+simplicity will be applied to all occurrences of standard conventions. Strict
+simplicity adds additional validation to an occurrence of a standard convention
+that may yield more information to the stdout about invalid data or
+inconsistencies in data that was once previously valid but has been invalidated
+due to strict simplicity.

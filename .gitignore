@@ -1,0 +1,15 @@
+*.a
+*.bin
+*.elf
+*.dll
+*.img
+*.log
+*.o
+*.so
+
+examples/stdlib/die
+examples/stdlib/free
+examples/stdlib/malloc
+examples/stdlib/warn
+
+examples/string/chkstr
