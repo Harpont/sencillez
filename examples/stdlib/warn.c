@@ -7,7 +7,7 @@
  * Provide an example of the various warnings that may occur
  * when using this library.
  */
-#include "simplicity/stdlib.h"
+#include "sencillez/stdlib.h"
 
 int main(void)
 {

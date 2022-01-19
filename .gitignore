@@ -13,3 +13,5 @@ examples/stdlib/malloc
 examples/stdlib/warn
 
 examples/string/chkstr
+examples/string/memcpy
+examples/string/strcpy

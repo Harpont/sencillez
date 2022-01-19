@@ -6,7 +6,7 @@
  *
  * Provide an example of the how to implement a call to chkstr.
  */
-#include "simplicity/string.h"
+#include "sencillez/string.h"
 
 int main(void)
 {

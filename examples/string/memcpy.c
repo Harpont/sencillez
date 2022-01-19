@@ -6,7 +6,7 @@
  *
  * Provide an example of the how to implement a call to memcpy.
  */
-#include "simplicity/string.h"
+#include "sencillez/string.h"
 #include <stdio.h>
 
 int main(void)

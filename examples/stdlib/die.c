@@ -6,7 +6,7 @@
  *
  * Provide an example of the how to graceful exit the program.
  */
-#include "simplicity/stdlib.h"
+#include "sencillez/stdlib.h"
 
 int main(void)
 {

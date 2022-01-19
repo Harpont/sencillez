@@ -6,7 +6,7 @@
  *
  * Provide an example of the how to implement a call to free.
  */
-#include "simplicity/stdlib.h"
+#include "sencillez/stdlib.h"
 #include <stdlib.h>
 #include <string.h>
 
