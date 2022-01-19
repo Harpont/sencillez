@@ -24,8 +24,14 @@
  * Check whether or not debugging is enabled
  * by the compiler. If so, turn on additional
  * C validation conventions.
+ *
+ * It is standard to insert `-D_DEBUG` into
+ * the compile command when debugging is enabled
+ * and `-DNDEBUG` when debugging is disabled.
+ * Therefore, is debugging is enabled, this
+ * library should turn on additional validation.
  */
-#ifdef  STRICT
+#ifdef  _DEBUG
 #define ENABLED_STRICT_SIMPLICITY
 #endif
 /*
