@@ -1,0 +1,24 @@
+It is a goal of this library to enable users' to write more safe code. Part of
+this idea of not only abstracting standard C conventions but doing so in a safe
+and reliable manor requires this library to exit the program gracefully when
+some data does not pan out. As a result, an exception may be handled in several
+ways.
+
+One of which is to simply warn the user at the occurrence of an exception. This
+will happen when an exception that is not particular damaging occurs but there
+is still worth notifying the user of such an exception. This particular instance
+does not occur often but it can happen so it is worth mentioning.
+
+The second way an exception may be handled in this library, is by warning the
+user an then gracefully exiting the program. This is by far the most common way
+of exception handling in this library. This informs the user that some data
+is not panning out and then leaves the program before anything detrimental can
+happen to the program's memory, a third-party system, on the host system.
+
+The final way in which this library may handle an exception, is by warning the
+user, providing a stack trace just after the warning, and gracefully exiting the
+program. Exceptions are handled in this way in debugging mode, set by the
+compiler. This is useful when attempting to determine the occurrence of the
+originating dependency. Often problems arise in a another segment of code long
+before an error occurs and this method provides a very verbose manor of tracking
+and correcting such occurrences.

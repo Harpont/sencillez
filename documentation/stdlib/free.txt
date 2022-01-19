@@ -1,0 +1,6 @@
+Providing standard conventions around calls to free in this library are
+particularly challenging due to the nature of the way memory is freed from the
+heap. This call does not care so much about the length of the segment at the
+address, thus this library must maintain the context of various pointer types
+in the core of the operation. If not, it is impossible to derive a pointer
+from a pointer within the scope of free in this library.

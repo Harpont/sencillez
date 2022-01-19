@@ -1,0 +1,12 @@
+Unlike standard calls to C in this library, calls to malloc are much more
+simplistic in its implementation. It all comes down to the way in which the
+pointer is used to store or reference some data. As it applies to malloc, this
+operation, at a high level, does not care about the segment of a particular
+pointer, instead more attention is on the address that the pointer points to and
+how much data is needed at that particular address. Therefore a void pointer is
+suitable for allocating any segment of data to the heap. However, because of the
+nature of this mechanics in this call, it is imperative that this operation be
+checked for success or failure. In the event of a failure of this operation,
+this library must also as a failure of this call suggests there are larger
+problems at hand and potentially damaging situations could arise as a result of
+the failure of this function.
