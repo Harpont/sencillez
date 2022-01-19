@@ -3,7 +3,8 @@ Standard GNU99C Simplicity (Convention Library)
 The purpose of this library is to simplify programming with the C programming
 language. This is possible by abstracting community established best practices
 surrounding calls to functions in the C standard libraries. The abstractions in
-this library wrap and overload a series of functions by default, making these calls more consistent and safe. Implementing programs in this way allows
+this library wrap and overload a series of functions by default, making these
+calls more consistent and safe. Implementing programs in this way allows
 developers to focus more on conceptual aspects of the program as opposed to
 conventional ones.
 
