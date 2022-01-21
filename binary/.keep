@@ -1,0 +1,5 @@
+This directory is solely for the location of binaries compiled by this project.
+No no means should an source code, header files, documentation, logs,
+configurations, templates, and any miscellaneous file be placed in this
+directory. If a file is placed in this directory, it is possible that such file
+could be deleted forever when merging or building this project.
