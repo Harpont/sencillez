@@ -6,68 +6,69 @@
  *
  * Define a series of functions for parsing C source files.
  */
+#include "abstract.h"
+#include "io.h"
 #include <stdint.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
+#define MAXFILE  ((1 << (16 - 1)) * sizeof(char  ))
 #define MAXLINE  ((1 << ( 8 - 1)) * sizeof(char  ))
 #define MAXLINES ((1 << ( 5 - 1)) * sizeof(char *))
 
-static char **new_lines(size_t n)
+static char **parse_lines(char *data, size_t *i)
 {
+  char const chr[2] = "\n";
   char **lines = NULL;
-  lines = malloc(n);
+  char *tok = NULL;
+
+  MALLOC(lines, MAXLINES);
+
+  for (tok = strtok(data, chr); tok != NULL; *i += 1, tok = strtok(NULL, chr))
+  {
+    MALLOC(lines[*i], MAXLINE);
+    strcpy(lines[*i], tok);
+  }
+
+  return lines;
+}
+
+/*
+ * [x] reading
+ * [ ] parsing
+ * [ ] formatting
+ * [ ] analyzing
+ * [ ] inserting
+ */
+void parse(char *fpath)
+{
+  char buffer[MAXFILE];
+  int32_t rc = 0;
+
+  memset(buffer, 0, MAXFILE);
+
+  rc = disk_read(buffer, fpath);
+  if (rc < 0)
+  {
+    DIE("main(): could not read file");
+  }
+
+  char **lines = NULL;
+  uint64_t i, k;
+
+  lines = parse_lines(buffer, &i);
   if (lines == NULL)
   {
-    fprintf(stderr, "%s\n", "malloc(): out of memory");
-    exit(EXIT_FAILURE);
+    DIE("main(): could not parse lines");
   }
-  memset(lines, 0, n);
-  return lines;
-}
 
-static char *new_line(size_t n)
-{
-  char *line = NULL;
-  line = malloc(n);
-  if (line == NULL)
+  for (k = 0; k < i; k++)
   {
-    fprintf(stderr, "%s\n", "malloc(): out of memory");
-    exit(EXIT_FAILURE);
-  }
-  memset(line, 0, n);
-  return line;
-}
-
-void destroy_lines(char **lines, size_t const n)
-{
-  uint64_t i;
-  for (i = 0; i < n; i++)
-    { if (lines[i] != NULL) { free(lines[i]); lines[i] = NULL; }}
-  if (lines != NULL) { free(lines); lines = NULL; }
-}
-
-char **parse(char const *data, size_t *i)
-{
-  char **lines = NULL;
-  uint64_t j;
-  lines = new_lines(MAXLINES);
-  for (*i = 0, j = 0; *data; data++)
-  {
-    if (*i == 0 && j == 0)
+    if (lines[k] != NULL)
     {
-      lines[*i] = new_line(MAXLINE);
+      puts(lines[k]);
     }
-    if (*data == '\n')
-    {
-      lines[*i][j] = '\0';
-      j = 0; *i += 1;
-      lines[*i] = new_line(MAXLINE);
-      continue;
-    }
-    lines[*i][j++] = *data;
   }
-  lines[*i][j] = '\0';
-  return lines;
+
+  FREEN(lines, i);
 }
