@@ -23,7 +23,7 @@ SRCDIR := $(PWD)/examples/
 #
 # Flags
 #
-CFLAGS := -std=gnu99 -I$(PWD) -O0 -NDEBUG -Wall -Wextra -Werror
+CFLAGS := -std=gnu99 -I$(PWD) -O0 -DNDEBUG -Wall -Wextra -Werror
 
 all:
 	$(CC) $(CFLAGS) -o $(SRCDIR)/stdlib/die    $(SRCDIR)stdlib/die.c

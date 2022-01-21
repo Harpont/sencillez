@@ -14,7 +14,25 @@ int main(void)
 {
   char *ptr = NULL;
 
-  custom_free ( ptr, 0, NOSIGN, 0 );
+/*
+ * If the static analyzer detects that the
+ * pointer is of an array-type. It will
+ * turn on `__SENCILLEZ_FREE_CHILDREN__` and
+ * inject the appropriate code segment along
+ * with the number of children it counted.
+ */
+#ifdef __SENCILLEZ_FREE_CHILDREN__
+  __sencillez_free_children__(ptr,);
+#endif
+  __sencillez_free_pointer__(ptr);
+/*
+ * No matter what, the static analyzer will attempt
+ * to undefine the `__SENCILLEZ_FREE_CHILDREN__`
+ * instruction in the event that it was defined.
+ */
+#ifdef __SENCILLEZ_FREE_CHILDREN__
+#undef __SENCILLEZ_FREE_CHILDREN__
+#endif
 
   ptr = malloc(128);
   if (ptr == NULL)
@@ -24,7 +42,25 @@ int main(void)
   }
   memset(ptr, 0, 128);
 
-  custom_free ( ptr, 0, NOSIGN, 0 );
+/*
+ * If the static analyzer detects that the
+ * pointer is of an array-type. It will
+ * turn on `__SENCILLEZ_FREE_CHILDREN__` and
+ * inject the appropriate code segment along
+ * with the number of children it counted.
+ */
+#ifdef __SENCILLEZ_FREE_CHILDREN__
+  __sencillez_free_children__(ptr,);
+#endif
+  __sencillez_free_pointer__(ptr);
+/*
+ * No matter what, the static analyzer will attempt
+ * to undefine the `__SENCILLEZ_FREE_CHILDREN__`
+ * instruction in the event that it was defined.
+ */
+#ifdef __SENCILLEZ_FREE_CHILDREN__
+#undef __SENCILLEZ_FREE_CHILDREN__
+#endif
 
   return 0;
 }

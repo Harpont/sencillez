@@ -3,8 +3,11 @@
 *.elf
 *.dll
 *.img
+*.in
 *.log
 *.o
+*.out
+*.s
 *.so
 
 examples/stdlib/die
