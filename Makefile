@@ -34,3 +34,8 @@ all:
 	$(CC) $(CFLAGS) -o $(SRCDIR)/string/chkstr $(SRCDIR)string/chkstr.c
 	$(CC) $(CFLAGS) -o $(SRCDIR)/string/memcpy $(SRCDIR)string/memcpy.c
 	$(CC) $(CFLAGS) -o $(SRCDIR)/string/strcpy $(SRCDIR)string/strcpy.c
+
+	$(CC) $(CFLAGS) -o $(PWD)/a.out \
+	  $(PWD)/source/io.c \
+	  $(PWD)/source/parse.c \
+	  $(PWD)/source/main.c
