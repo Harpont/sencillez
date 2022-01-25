@@ -19,6 +19,7 @@
   exit(EXIT_FAILURE);
 
 #define __SENCILLEZ_OUT_OF_MEMORY__ "malloc(): out of memory"
+#define __SENCILLEZ_REG_SYNTAX_ERROR__ "regcomp(): syntax error"
 
 #define MALLOC(__ptr,__n) \
   __ptr = malloc(__n); \

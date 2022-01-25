@@ -16,9 +16,6 @@
 #include <regex.h>
 #include <errno.h>
 
-#define __SENCILLEZ_OUT_OF_MEMORY__ "malloc(): out of memory"
-#define __SENCILLEZ_REG_SYNTAX_ERROR__ "regcomp(): syntax error"
-
 #define MAXFILE  ((1 << (16 - 1)) * sizeof(char  ))
 #define MAXLINE  ((1 << ( 8 - 1)) * sizeof(char  ))
 #define MAXLINES ((1 << ( 5 - 1)) * sizeof(char *))
