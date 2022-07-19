@@ -26,7 +26,9 @@ static inline always_inline void * _malloc_(
   __ptr = malloc(__n);
 #ifdef ENABLED_SIMPLICITY
   if (__ptr == NULL) { die(__func__, OUT_OF_MEM); }
+#ifdef ENABLED_STRICT_SIMPLICITY
   memset(__ptr, 0, __n);
+#endif
 #endif
   return __ptr;
 }
